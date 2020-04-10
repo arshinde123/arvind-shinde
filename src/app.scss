@@ -1,5 +1,12 @@
 @import './variables.scss';
 
-h1 {
-    color: $color-blue-light;
+.container {
+    display: grid;
+
+    grid-template-rows: 100vh;
+    grid-template-columns: [sidebar-start] 18vw [sidebar-end content-start] 1fr [center-start] repeat(8, 1fr) [center-end] 1fr [content-end];
+
+    &__sidebar {
+        grid-column: 1 / 2;
+    }
 }

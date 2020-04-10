@@ -1,1 +1,121 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
+
+.sidebar {
+  background-color: $color-blue-marshal-dark;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &__img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 5px solid $color-white;
+  }
+
+  &__desc {
+    text-align: center;
+
+    &--name {
+      color: $color-grey-dark-1;
+      font-weight: 600;
+      font-size: 2.4rem;
+    }
+
+    &--title {
+      color: $color-grey-dark-3;
+      font-size: 1.5rem;
+    }
+
+    &--title:after {
+      content: ""; /* This is necessary for the pseudo element to work. */
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 0%; /* Change this to whatever width you want. */
+      padding: 0.5rem;
+      border-bottom: 3px solid;
+      border-image-source: linear-gradient(
+        to right,
+        $color-blue-light,
+        $color-green-light
+      );
+      border-image-slice: 1;
+      animation: line-grow-shink 3s ease-out alternate-reverse infinite;
+    }
+  }
+
+  &__email {
+    color: $color-grey-dark-2;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    &--label {
+    }
+
+    &--value {
+    }
+  }
+
+  &__nav {
+    color: $color-grey-dark-1;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    & > ul {
+      list-style: none;
+    }
+
+    &--item {
+      padding: 2rem;
+      cursor: pointer;
+
+      &-active {
+        // display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 100%; /* Change this to whatever width you want. */
+        padding: 0.5rem;
+        border-bottom: 3px solid;
+        border-image-source: linear-gradient(
+          to right,
+          $color-blue-light,
+          $color-green-light
+        );
+        border-image-slice: 1;
+        // animation: line-grow-shink 3s ease-out alternate-reverse infinite;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $color-grey-dark-2;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+@keyframes line-grow-shink {
+  0% {
+    width: 0%;
+  }
+
+  5% {
+    width: 5%;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
